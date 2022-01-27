@@ -24,12 +24,12 @@ MongoClient.connect(connectionString,{useUnifiedTopology:true})
         })
 
         // 2. Reading data from Mongodb
-        app.get('./getall',(req,res) => {
+        app.get('/getall',(req,res)=>{
             db.collection('quotes').find().toArray()
-            .then(result => {
+            .then(result=>{
                 res.send(result)
             })
-            .catch(error => console.error(error))
+            .catch(error=>console.error(error))
         })
 
 
