@@ -32,7 +32,14 @@ MongoClient.connect(connectionString,{useUnifiedTopology:true})
             .catch(error=>console.error(error))
         })
 
-
+        //3. Updating Data
+        app.put('/updatequote',(req,res)=>{
+            quotesCollection.findOneAndUpdate()
+            .then(result=>{
+                res.send(result)
+            })
+            .catch(error=>console.error(error))
+        })
     }).catch(console.error)
 
 app.get('/',(req,res) => {
